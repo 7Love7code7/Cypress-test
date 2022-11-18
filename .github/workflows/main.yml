@@ -60,6 +60,31 @@ jobs:
           if-no-files-found: error
           path: build
 
+  install-macos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Cypress install
+        uses: cypress-io/github-action@v4
+        with:
+          runTests: false
+      # report machine parameters
+      - run: yarn cypress info
+      - run: node -p 'os.cpus()'
+      - run: yarn types
+      - run: yarn lint
+      - run: yarn test:unit:ci
+      - run: yarn build:ci
+
+      - name: Save build folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
+
   ui-webkit-tests:
     timeout-minutes: 15
     runs-on: macos-latest
