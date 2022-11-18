@@ -79,6 +79,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      
+      - name: Install dependencies
+        uses: cypress-io/github-action@v4
+        with:
+          # install WebKit browser dependencies
+          build: npx playwright install-deps webkit
+          runTests: false
 
       - name: Download the build folders
         uses: actions/download-artifact@v3
@@ -94,9 +101,6 @@ jobs:
 
       - name: __e Dir
         run: ls /__e
-      
-      - name: install webkit
-        run: npx playwright install-deps webkit
 
       - name: "UI Tests - Webkit"
         uses: cypress-io/github-action@v4
