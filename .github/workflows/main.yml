@@ -96,9 +96,6 @@ jobs:
       - name: Node info
         run: node -v
 
-      - name: __e Dir
-        run: ls /__e
-
       - name: "UI Tests - Webkit"
         uses: cypress-io/github-action@v4
         with:
