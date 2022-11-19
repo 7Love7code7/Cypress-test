@@ -16,6 +16,7 @@ const awsConfig = require(path.join(__dirname, "./aws-exports-es5.js"));
 
 module.exports = defineConfig({
   projectId: "7s5okt",
+  experimentalWebKitSupport: true,
   env: {
     apiUrl: "http://localhost:3001",
     mobileViewportWidthBreakpoint: 414,
