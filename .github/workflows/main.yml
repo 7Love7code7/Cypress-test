@@ -63,9 +63,6 @@ jobs:
   ui-webkit-tests:
     timeout-minutes: 15
     runs-on: ubuntu-latest
-    container:
-      image: cypress/browsers:node16.13.0-chrome95-ff94
-      options: --user 1001
     needs: install
     strategy:
       # when one test fails, DO NOT cancel the other
@@ -90,7 +87,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           # install WebKit browser dependencies
-          build: sudo npx playwright install-deps webkit
+          build: npx playwright install-deps webkit
           runTests: false
 
       - name: Cypress info
