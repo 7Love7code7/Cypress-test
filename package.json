@@ -91,7 +91,7 @@
     "concurrently": "7.1.0",
     "cors": "2.8.5",
     "cross-env": "7.0.3",
-    "cypress": "https://cdn.cypress.io/beta/npm/10.7.1/linux-x64/matth/test/at-video-refactor-4a5fdf257bc09fcc890ce71b48fc1a40b9c56a5f/cypress.tgz",
+    "cypress": "https://cdn.cypress.io/beta/npm/10.7.1/linux-x64/matth/test/at-video-refactor-625528c0816e971cecab3262a5e7684f818917e8/cypress.tgz",
     "dotenv": "16.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-cypress": "2.12.1",
