@@ -32,17 +32,17 @@ workflows:
       - cypress/install:
           name: "Setup Linux1"
           yarn: true
-          # executor: with-chrome-and-firefox
+          executor: with-chrome-and-firefox
       - cypress/install:
           name: "Setup Linux2"
           yarn: true
-          # executor: with-chrome-and-firefox
+          executor: with-chrome-and-firefox
           requires: 
             - Setup Linux1 
       - cypress/install:
           name: "Setup Linux3"
           yarn: true
-          # executor: with-chrome-and-firefox
+          executor: with-chrome-and-firefox
           requires: 
             - Setup Linux1
           # build: "yarn build:ci"
