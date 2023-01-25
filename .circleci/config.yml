@@ -52,7 +52,7 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
-          cache-key: 'v1-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
       - cypress/run:
           name: "Setup Linux2"
           # yarn: true
@@ -72,6 +72,7 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
+          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
       - cypress/run:
           name: "Setup Linux3"
           # yarn: true
@@ -91,6 +92,7 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
+          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
     
 #     # Run Cypress Component tests
 #     - cypress/run:
