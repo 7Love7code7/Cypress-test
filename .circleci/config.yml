@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@dev:d02d6ac8b7b51efb2fda67c861f4094a05290947
+  cypress: cypress-io/cypress@dev:ee8965d62e316dbede22d7d15cd161443683c5cf
   codecov: codecov/codecov@1.2.3 #
   win: circleci/windows@4.1.1
 
@@ -52,7 +52,8 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
-          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          node-cache-version: 'v2'
       - cypress/run:
           name: "Setup Linux2"
           # yarn: true
@@ -72,7 +73,8 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
-          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          node-cache-version: 'v2'
       - cypress/run:
           name: "Setup Linux3"
           # yarn: true
@@ -92,7 +94,8 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
-          cache-key: 'v3-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+          node-cache-version: 'v2'
     
 #     # Run Cypress Component tests
 #     - cypress/run:
