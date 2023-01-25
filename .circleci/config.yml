@@ -52,6 +52,7 @@ workflows:
           #       name: Run Unit Tests
           #       command: yarn test:unit:ci
           package-manager: yarn
+          cache-key: 'v1-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
       - cypress/run:
           name: "Setup Linux2"
           # yarn: true
