@@ -36,7 +36,7 @@ linux-workflow: &linux-workflow
         name: "Setup Linux"
         yarn: true
         executor: with-chrome-and-firefox
-        # build: "yarn build:ci"
+        build: "yarn build:ci"
         # post-steps:
         #   - run:
         #       name: Print machine info ℹ️
@@ -95,7 +95,7 @@ linux-workflow: &linux-workflow
         # wait-on: "http://localhost:3000"
         # command-prefix: npx percy exec --
         yarn: true
-        # start: yarn start:ci
+        start: yarn start:ci
         # record: true
         parallel: true
         parallelism: 3
