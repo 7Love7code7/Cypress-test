@@ -26,25 +26,17 @@ executors:
 #           file: coverage/coverage-final.json
 
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Workflows ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ #
-workflows: 
-  install-cypress:
+workflows:
+  build:
     jobs:
-      - cypress/install:
-          name: "Setup Linux1"
-          yarn: true
-          executor: with-chrome-and-firefox
-      - cypress/install:
-          name: "Setup Linux2"
-          yarn: true
-          executor: with-chrome-and-firefox
-          requires: 
-            - Setup Linux1 
-      - cypress/install:
-          name: "Setup Linux3"
-          yarn: true
-          executor: with-chrome-and-firefox
-          requires: 
-            - Setup Linux1
+      - cypress/install
+      - cypress/run:
+          requires:
+            - cypress/install
+          record: true
+          parallel: true
+          parallelism: 3
+          group: 2 machines
           # build: "yarn build:ci"
           # post-steps:
           #   - run:
