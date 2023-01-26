@@ -52,18 +52,18 @@ linux-workflow: &linux-workflow
         #       command: yarn test:unit:ci
 
     # Run Cypress Component tests
-    - cypress/run:
-        name: "Cypress Component Tests"
-        executor: with-chrome-and-firefox
-        yarn: true
-        component: true
-        # record: true
-        parallel: true
-        parallelism: 3
-        # ci-build-id: ${CIRCLE_SHA1:0:8}
-        group: Component
-        requires:
-          - Setup Linux
+    # - cypress/run:
+    #     name: "Cypress Component Tests"
+    #     executor: with-chrome-and-firefox
+    #     yarn: true
+    #     component: true
+    #     # record: true
+    #     parallel: true
+    #     parallelism: 3
+    #     # ci-build-id: ${CIRCLE_SHA1:0:8}
+    #     group: Component
+    #     requires:
+    #       - Setup Linux
         # post-steps:
         #   - report-coverage
 
@@ -87,24 +87,24 @@ linux-workflow: &linux-workflow
     #       - report-coverage
 
     # # Run E2E tests in Chrome
-    # - cypress/run:
-    #     name: "UI Tests - Chrome"
-    #     browser: chrome
-    #     spec: cypress/tests/ui/*
-    #     executor: with-chrome-and-firefox
-    #     wait-on: "http://localhost:3000"
-    #     command-prefix: npx percy exec --
-    #     yarn: true
-    #     start: yarn start:ci
-    #     record: true
-    #     parallel: true
-    #     parallelism: 5
-    #     ci-build-id: ${CIRCLE_SHA1:0:8}
-    #     group: "UI - Chrome"
-    #     requires:
-    #       - Setup Linux
-    #     post-steps:
-    #       - report-coverage
+    - cypress/run:
+        name: "UI Tests - Chrome"
+        browser: chrome
+        spec: cypress/tests/ui/*
+        executor: with-chrome-and-firefox
+        # wait-on: "http://localhost:3000"
+        # command-prefix: npx percy exec --
+        yarn: true
+        # start: yarn start:ci
+        # record: true
+        parallel: true
+        parallelism: 3
+        # ci-build-id: ${CIRCLE_SHA1:0:8}
+        group: "UI - Chrome"
+        requires:
+          - Setup Linux
+        # post-steps:
+        #   - report-coverage
 
     # # Run E2E tests in Chrome with mobile device viewport
     # - cypress/run:
