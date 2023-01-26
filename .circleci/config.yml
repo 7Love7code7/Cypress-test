@@ -29,7 +29,7 @@ executors:
 workflows:
   build:
     jobs:
-      - cypress/install
+      - cypress/install:
           yarn: true
       - cypress/run:
           requires:
