@@ -33,10 +33,11 @@ workflows:
       - cypress/run:
           requires:
             - cypress/install
-          record: true
+          # record: true
           parallel: true
           parallelism: 3
           group: 2 machines
+          yarn: true
           # build: "yarn build:ci"
           # post-steps:
           #   - run:
