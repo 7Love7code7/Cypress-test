@@ -30,6 +30,7 @@ workflows:
   build:
     jobs:
       - cypress/install
+          yarn: true
       - cypress/run:
           requires:
             - cypress/install
@@ -37,7 +38,6 @@ workflows:
           parallel: true
           parallelism: 3
           group: 2 machines
-          yarn: true
           # build: "yarn build:ci"
           # post-steps:
           #   - run:
