@@ -37,6 +37,7 @@ linux-workflow: &linux-workflow
         yarn: true
         executor: with-chrome-and-firefox
         build: "yarn build:ci"
+        cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
         # post-steps:
         #   - run:
         #       name: Print machine info ℹ️
@@ -100,6 +101,7 @@ linux-workflow: &linux-workflow
         parallel: true
         parallelism: 3
         # ci-build-id: ${CIRCLE_SHA1:0:8}
+        cache-key: 'yarn-packages-{{ arch }}-{{ checksum "yarn.lock" }}'
         group: "UI - Chrome"
         requires:
           - Setup Linux
