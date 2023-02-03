@@ -11,7 +11,7 @@ import "@cypress/instrument-cra";
 dotenv.config({ path: ".env.local" });
 dotenv.config();
 
-const awsConfig = require(path.join(__dirname, "./aws-exports-es5.js"));
+// const awsConfig = require(path.join(__dirname, "./aws-exports-es5.js"));
 
 module.exports = defineConfig({
   projectId: "7s5okt",
@@ -43,7 +43,7 @@ module.exports = defineConfig({
     cognito_password: process.env.AWS_COGNITO_PASSWORD,
     cognito_domain: process.env.AWS_COGNITO_DOMAIN,
     cognito_programmatic_login: false,
-    awsConfig: awsConfig.default,
+    // awsConfig: awsConfig.default,
 
     // Google
     googleRefreshToken: process.env.GOOGLE_REFRESH_TOKEN,
