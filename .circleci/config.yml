@@ -54,48 +54,50 @@ workflows:
           package-manager: yarn
           cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
           node-cache-version: 'v2'
-      - cypress/run:
-          name: "Setup Linux2"
-          # yarn: true
-          # executor: with-chrome-and-firefox
-          # build: "yarn build:ci"
-          # post-steps:
-          #   - run:
-          #       name: Print machine info ℹ️
-          #       command: yarn cypress info
-          #   - run:
-          #       name: Check Types
-          #       command: yarn types
-          #   - run:
-          #       name: Lint Files
-          #       command: yarn lint
-          #   - run:
-          #       name: Run Unit Tests
-          #       command: yarn test:unit:ci
-          package-manager: yarn
-          cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
-          node-cache-version: 'v2'
-      - cypress/run:
-          name: "Setup Linux3"
-          # yarn: true
-          # executor: with-chrome-and-firefox
-          # build: "yarn build:ci"
-          # post-steps:
-          #   - run:
-          #       name: Print machine info ℹ️
-          #       command: yarn cypress info
-          #   - run:
-          #       name: Check Types
-          #       command: yarn types
-          #   - run:
-          #       name: Lint Files
-          #       command: yarn lint
-          #   - run:
-          #       name: Run Unit Tests
-          #       command: yarn test:unit:ci
-          package-manager: yarn
-          cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
-          node-cache-version: 'v2'
+          parallelism: 3
+          cypress-command: 'npx cypress run --record --parallel'
+      # - cypress/run:
+      #     name: "Setup Linux2"
+      #     # yarn: true
+      #     # executor: with-chrome-and-firefox
+      #     # build: "yarn build:ci"
+      #     # post-steps:
+      #     #   - run:
+      #     #       name: Print machine info ℹ️
+      #     #       command: yarn cypress info
+      #     #   - run:
+      #     #       name: Check Types
+      #     #       command: yarn types
+      #     #   - run:
+      #     #       name: Lint Files
+      #     #       command: yarn lint
+      #     #   - run:
+      #     #       name: Run Unit Tests
+      #     #       command: yarn test:unit:ci
+      #     package-manager: yarn
+      #     cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+      #     node-cache-version: 'v2'
+      # - cypress/run:
+      #     name: "Setup Linux3"
+      #     # yarn: true
+      #     # executor: with-chrome-and-firefox
+      #     # build: "yarn build:ci"
+      #     # post-steps:
+      #     #   - run:
+      #     #       name: Print machine info ℹ️
+      #     #       command: yarn cypress info
+      #     #   - run:
+      #     #       name: Check Types
+      #     #       command: yarn types
+      #     #   - run:
+      #     #       name: Lint Files
+      #     #       command: yarn lint
+      #     #   - run:
+      #     #       name: Run Unit Tests
+      #     #       command: yarn test:unit:ci
+      #     package-manager: yarn
+      #     cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
+      #     node-cache-version: 'v2'
     
 #     # Run Cypress Component tests
 #     - cypress/run:
