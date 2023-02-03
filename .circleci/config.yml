@@ -55,6 +55,7 @@ workflows:
           cache-key: 'v4-cypress-cache-{{ arch }}-{{ checksum "package.json" }}'
           node-cache-version: 'v2'
           parallelism: 3
+          start-command: 'yarn start:ci'
           cypress-command: 'npx cypress run --record --parallel'
       # - cypress/run:
       #     name: "Setup Linux2"
