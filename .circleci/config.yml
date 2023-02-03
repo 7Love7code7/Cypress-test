@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@dev:ee8965d62e316dbede22d7d15cd161443683c5cf
+  cypress: cypress-io/cypress@dev:f824b5f759e5bcce90d73011242049075a1e22ad
   codecov: codecov/codecov@1.2.3 #
   win: circleci/windows@4.1.1
 
