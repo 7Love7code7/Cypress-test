@@ -34,13 +34,13 @@ describe("New Transaction", function () {
     });
   });
 
-  it("navigates to the new transaction form, selects a user and submits a transaction payment", function () {
+  it.only("navigates to the new transaction form, selects a user and submits a transaction payment", function () {
     const payment = {
       amount: "35",
       description: "Sushi dinner 🍣",
     };
 
-    cy.getBySelLike("new-transaction").click();
+    cy.getBySelLike("new-transactionz").click();
     cy.wait("@allUsers");
 
     cy.getBySel("user-list-search-input").type(ctx.contact!.firstName, { force: true });
