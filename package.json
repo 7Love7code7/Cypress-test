@@ -104,7 +104,7 @@
     "express-validator": "6.14.0",
     "fuse.js": "6.5.3",
     "graphql": "16.4.0",
-    "graphql-tools": "8.2.7",
+    "graphql-tools": "8.3.20",
     "husky": "7.0.4",
     "istanbul-lib-coverage": "3.2.0",
     "json": "11.0.0",
